@@ -45,7 +45,8 @@ nav ul li a:hover {
 }
 
 .mission {
-    background-image: url('../images/img-mission-background.webp');
+    position: relative;
+    background-image: url('../images/img-mission-background.webp'); /* Add your mission image here */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,6 +55,23 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.mission::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5; /* Adjust opacity as needed for the overlay */
+    z-index: 1;
+}
+
+.mission h2, .mission p {
+    z-index: 2; /* Bring text to front */
+    position: relative;
 }
 
 .mission h2 {
@@ -102,13 +120,18 @@ nav ul li a:hover {
 }
 
 .locations {
-    background-color: black;
+    position: relative;
+    background-image: url('../images/img-locations-background.webp'); /* Add your location image here */
+    background-size: cover;
+    background-position: center;
     padding: 40px 0;
 }
 
 .locations h3 {
     font-size: 36px;
     margin-bottom: 40px;
+    z-index: 2; /* Ensure the text stays above the background */
+    position: relative;
 }
 
 .location-grid {
@@ -127,6 +150,8 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2; /* Ensure the location boxes stay above the background */
+    position: relative;
 }
 
 .location h3 {
@@ -138,7 +163,7 @@ footer {
     padding: 20px 0;
     background-color: black;
     color: seashell;
-    text-align: left;
+    text-align: center; /* Center the contact information */
     padding-left: 20px;
 }
 
